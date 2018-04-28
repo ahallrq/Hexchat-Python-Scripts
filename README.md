@@ -21,3 +21,14 @@ Current commands are:
 `XBAN` and `XUNBAN` - Ban/Unban a user from multple channels - uses chanserv. This might change in the future
 
 `XKICK` - Kick a user from multiple channels
+
+##### opmsmsg.py
+
+Sends a msg to every op in the current channel via MemoServ telling them why you were required to override or ojoin their channel.
+
+This is extremely useful for IRC staff to let chanops know if you needed to kick/ban someone and no one is around.
+
+You may want to change the template before using as it's currently suited for Snoonet.
+
+###### Usage
+`MSREPORT <nick> <action> <reason> [logurl]` - Sends a report to chanops viua MemoServ. Optionally takes a URL for a log or whatever.
