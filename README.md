@@ -1,8 +1,8 @@
-### Python Scripts for Hexchat
+## Python Scripts for Hexchat
 
 Scripts I've written/adapted for Hexchat are in this repo. Below is an overview of what's available.
 
-##### multichan.py
+#### multichan.py
 
 Allows you to execute commands across multiple channels. Useful for banning a user from more than one channel at once.
 
@@ -22,7 +22,7 @@ Current commands are:
 
 `XKICK` - Kick a user from multiple channels
 
-##### opmsmsg.py
+#### opmsmsg.py
 
 Sends a msg to every op in the current channel via MemoServ telling them why you were required to override or ojoin their channel.
 
