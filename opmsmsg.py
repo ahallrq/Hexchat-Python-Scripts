@@ -8,7 +8,7 @@ templ_header = "Greetings {f_target}, an incident occured in {f_channel} at {f_t
 
 templ_log = "An incident log is available at {f_url}. "
 
-templ_footer = "For more info please contact me by PM or ask another staff member in #optalk or #help"
+templ_footer = "For more info please contact a staff member in #optalk or #help. Cheers."
 
 def command_cb(word, word_eol, userdata):
         user_list = hexchat.get_list("users")
@@ -18,14 +18,14 @@ def command_cb(word, word_eol, userdata):
             url = None
 
         if user_list:
-            ops = [item.nick for item in user_list if item.prefix in ("%", "@", "&", "~")]
+            ops = [item.nick for item in user_list if item.prefix in ("@", "&", "~") and item.nick != hexchat.get_info("nick")]
             for op in ops:
                 send_report(op, hexchat.get_info("channel"), word[1], word[2], word[3], url)
             
         return hexchat.EAT_ALL
 
 def send_report(f_target, f_channel, f_nick, f_action, f_reason, f_url=None, dt=datetime.datetime.now()):
-    comm = f"MS SEND {f_target} " + templ_header
+    comm = f"MS RSEND {f_target} " + templ_header
     if f_url not in ["", None]:
         comm += templ_log
     comm += templ_footer
